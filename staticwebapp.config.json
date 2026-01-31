@@ -69,7 +69,10 @@
     ]
   },
   "responseOverrides": {
-    "401": { "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer", "statusCode": 302, "exclude": ["/assets/illustrations/*.{png,jpg,gif}", "/css/*"] }", "/css/*"]
+    "401": {
+      "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer",
+      "statusCode": 302,
+      "exclude": ["/assets/illustrations/*.{png,jpg,gif}", "/css/*"]
     },
     "403": {
       "rewrite": "/403"
@@ -85,4 +88,3 @@
     ".json": "text/json"
   }
 }
-
