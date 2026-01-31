@@ -52,7 +52,7 @@
     },
     {
       "route": "*",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated"]
+      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
     }
   ],
   "navigationFallback": {
@@ -70,7 +70,7 @@
   },
   "responseOverrides": {
     "401": {
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer",
+      "redirect": "//.auth/login/aad?post_login_redirect_uri=.referrer",
       "statusCode": 302,
       "exclude": ["/assets/illustrations/*.{png,jpg,gif}", "/css/*"]
     },
