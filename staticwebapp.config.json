@@ -36,23 +36,23 @@
     },
     {
       "route": "/authredirect",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/LogoutRedirect",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/404",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
       "route": "/api/Public*",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
       "route": "*",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["authenticated"]
     }
   ],
   "navigationFallback": {
@@ -71,11 +71,11 @@
   "responseOverrides": {
     "401": {
       "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer",
-      "statusCode": 302,
-      "exclude": ["/assets/illustrations/*.{png,jpg,gif}", "/css/*"]
+      "statusCode": 302
     },
     "403": {
-      "rewrite": "/403"
+      "redirect": "/cipp/setup",
+      "statusCode": 302
     },
     "404": {
       "rewrite": "/404"
