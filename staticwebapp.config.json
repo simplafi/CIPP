@@ -74,8 +74,8 @@
       "statusCode": 302
     },
     "403": {
-      "redirect": "/cipp/setup",
-      "statusCode": 302
+      "rewrite": "/403"
+}
     },
     "404": {
       "rewrite": "/404"
